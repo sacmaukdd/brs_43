@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 20161227033225) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.boolean  "status"
     t.integer  "user_id"
     t.integer  "book_id"
     t.datetime "created_at", null: false

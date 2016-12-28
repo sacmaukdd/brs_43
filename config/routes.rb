@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :books
     resources :categories
     resources :users, only: :destroy
+    resources :requests, only: [:index, :destroy]
   end
 
   resources :books
@@ -28,4 +29,5 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :account_activations, only: :edit
   resources :likes
+  resources :requests
 end

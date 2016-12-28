@@ -25,6 +25,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @requests = current_user.requests.order_date_desc.paginate page: params[:page],
+      per_page: Settings.per_page
   end
 
   def edit

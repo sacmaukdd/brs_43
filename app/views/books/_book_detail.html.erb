@@ -10,6 +10,14 @@
         <%= l book_detail.publish_date, format: :short %></p>
       <p><%= t "num_page" %><%= book_detail.num_page %></p>
       <% if logged_in? %>
+        <% if @have_request.blank? %>
+          <div id="buy-button">
+            <%= form_for @request, remote: true do |f| %>
+              <%= f.hidden_field :book_id, value: @book.id %>
+              <%= f.submit t("buy"), class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        <% end %>
         <button id="select-review" type="button" class="btn btn-info btn-lg"
           data-toggle="modal" data-target="#myModal1"><%= t "open" %></button>
       <% end %>

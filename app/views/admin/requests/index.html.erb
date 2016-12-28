@@ -1,0 +1,30 @@
+<table class="request-img-ad">
+  <caption><h1><%= t "requests" %></h1></caption>
+  <thead>
+    <tr>
+      <th><%= t "stt" %></th>
+      <th><%= t "name" %></th>
+      <th><%= t "title_book" %></th>
+      <th><%= t "author" %></th>
+      <th><%= t "image" %></th>
+      <th><%= t "action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @request.each_with_index do |request, index| %>
+      <tr>
+        <td>
+          <% params[:page] ||= Settings.params_page %>
+          <%= index_continue params[:page], index, Settings.per_page %>
+        </td>
+        <td><%= request.user.try :username %></td>
+        <td><%= request.book.try :title %></td>
+        <td><%= request.book.try :author %></td>
+        <td><%= image_tag request.book.try(:image) %></td>
+        <td><%= link_to t("delete"), admin_request_path(request.id), method: :delete,
+          data: { confirm: t("sure") } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @request %>
