@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   resources :rates
   resources :relationships, only: [:create, :destroy]
   resources :account_activations, only: :edit
+  resources :likes
 end

@@ -1,0 +1,2 @@
+$('#like-form-<%= @review.id %>').html('<%= j render partial: "books/dislike", locals: {like_of_review: @review} %>');
+$('#num-like-<%= @review.id %>').html('<%= @review.likes.size %>')

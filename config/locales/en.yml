@@ -114,3 +114,7 @@ en:
   view_profile: "view my profile"
   num_of_followers: "%{count} followers"
   num_of_following: "%{count} following"
+  like_error: "Like error"
+  dislike: "Dislike"
+  like: "Like"
+  error_load_like: "Load like error"

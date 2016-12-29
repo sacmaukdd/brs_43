@@ -1,0 +1,5 @@
+<%= form_for load_to_detroy(like_of_review.id, current_user.id),
+  html: {method: :delete}, remote: true do |f| %>
+  <%= f.button "", class: "glyphicon glyphicon-thumbs-down", title: t("dislike") %>
+  <p class="like_text"><%= t "dislike" %></p>
+<% end %>
