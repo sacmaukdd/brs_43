@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
   resources :books
   resources :categories
+  resources :comments
 end

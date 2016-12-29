@@ -1,0 +1,12 @@
+<% review.comments.each do |comment| %>
+  <div id="comment-content">
+    <p><%= link_to comment.user.username, comment.user %> :
+    <%= comment.comment_content %> </p>
+    <span><%= time_ago_in_words comment.created_at %></span> ago.
+    <% if current_user? comment.user %>
+      <%= link_to t("edit"), edit_comment_path(comment.id) %>
+      <%= link_to t("delete"), comment_path(comment), method: :delete,
+        data: { confirm: t("answer_del") }%>
+    <% end %>
+  </div>
+<% end %>

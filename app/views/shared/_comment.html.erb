@@ -1,0 +1,18 @@
+<%= form_for @comment, remote: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div id="comment-form">
+    <div id="comment-text">
+      <%= f.text_area :comment_content, class: "text_comment",
+        placeholder: t("enter_comment") %>
+      <% if review.nil? %>
+        <%= f.hidden_field :review_id , value: comment.review_id %>
+      <% else %>
+        <%= f.hidden_field :review_id , value: review.id %>
+      <% end %>
+    </div>
+    <span id="submit">
+      <%= f.submit t("save"), class: "btn btn-primary" %>
+    </span>
+    <div class="clr"></div>
+  </div>
+<% end %>

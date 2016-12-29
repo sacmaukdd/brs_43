@@ -1,0 +1,4 @@
+<%= render partial: "shared/comment", locals: {review: review, comment: nil} %>
+<div id="id-<%= review.id %>">
+  <%= render partial: "shared/comment_content", locals: {review: review} %>
+</div>

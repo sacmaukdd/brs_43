@@ -7,5 +7,6 @@ class BooksController < ApplicationController
       flash[:danger] = t "load_book_error"
       redirect_to root_url
     end
+    @comment = Comment.new
   end
 end

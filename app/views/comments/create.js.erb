@@ -1,0 +1,1 @@
+$('#id-<%= @review.id %>').html('<%= escape_javascript(render partial: 'shared/comment_content', locals: {review: @review}) %>');
