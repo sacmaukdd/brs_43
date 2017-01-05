@@ -1,0 +1,5 @@
+<%= form_for current_user.likes.build, remote: true do |f| %>
+  <%= f.hidden_field :review_id, value: like_of_review.id %>
+  <%= f.button "", class: "glyphicon glyphicon-thumbs-up", title: t("like") %>
+  <p class="like_text"><%= t "like" %></p>
+<% end %>

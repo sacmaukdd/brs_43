@@ -49,12 +49,25 @@
           <% if current_user?(review.user) %>
             <%= link_to t("edit"), edit_review_path(review.id) %>
             <%= link_to t("delete"), review_path(review), method: :delete,
-              data: {confirm: t("answer_del")}%>
+              data: {confirm: t("answer_del")} %>
           <% end %>
         </div>
         <p class="time">
           <%= l review.created_at, format: :short %></p>
         </p>
+        <% if logged_in? %>
+          <div class="like">
+            <div class="num-like">
+              <span id="num-like-<%= review.id %>">
+                <%= review.likes.size %>
+              </span>
+              <span><%= t "like" %></span>
+            </div>
+            <div class="icon-like">
+              <%= render partial: "like_form", locals: {review_of_book: review} %>
+            </div>
+          </div>
+        <% end %>
       </div>
       <div class="clr"></div>
     <% end %>
