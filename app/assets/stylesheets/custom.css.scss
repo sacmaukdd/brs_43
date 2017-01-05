@@ -6,7 +6,7 @@ body {
   line-height: 1.5em;
   font-family: Verdana, Arial, san-serif;
   font-size: 11px;
-  color: #ffffff;
+  color: black;
   background: #4b4743;
 }
 a:link, a:visited { color: #e6e154; text-decoration: none; font-weight: bold;}
@@ -66,12 +66,13 @@ img {
   width: 960px;
   margin: 0 auto;
   padding: 0 10px;
-  background: #1c1c1b url(templatemo_bg.jpg) repeat-y;
+  background: #3E64AD;
 }
 /* menu */
 #templatemo-menu {
   clear: both;
-  width: 948px;
+  width: 960px;
+  margin-left: -10px;
   height: 45px;
   background: url(templatemo_menu_bg.jpg) no-repeat;
 }
@@ -249,7 +250,8 @@ img {
 /* footer */
 #templatemo-footer {
   clear: both;
-  width: 948px;
+  width: 960px;
+  margin-left: -10px;
   padding: 20px 0px 20px 0;
   text-align: center;
   border-top: 1px solid #25211e;
@@ -578,6 +580,7 @@ table td, th {
   img {
     margin-bottom: 20px;
   }
+}
 .rateit {
   display: -moz-inline-box;
   display: inline-block;
